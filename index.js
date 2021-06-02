@@ -7,16 +7,14 @@ function findMatching(drivers, name){
     return newDrivers;
 }
 
-function fuzzyMatch(drivers, nameBit){
-    const fuzzyDrivers = drivers.filter(function(person){
-        return person.toLowerCase().indexOf(nameBit.toLowerCase()) !== -1
-    });
-    return fuzzyDrivers;
+function fuzzyMatch(driverArray, name) {
+    return driverArray.filter(person => person[0].toLowerCase() === name[0].toLowerCase())
+
 }
 
-function matchName(drivers,name){
-    const newDrivers = drivers.filter(function(step){drivers[step] === name})
-    return newDrivers;
+function matchName(driverArray, name) {
+    return driverArray.filter(person => person.name === name)
+
 }
 
 
